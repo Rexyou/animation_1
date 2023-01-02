@@ -4,6 +4,21 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+ padding: 0;
+ margin: 0;
+ height: 100vh; /* fallback for Js load */
+ height: var(--doc-height);
+ background-color: #FFDB89;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@supports (-webkit-touch-callout: none) {
+  .h-screen {
+    height: -webkit-fill-available;
+  }
+}
